@@ -1,0 +1,21 @@
+(defun C:cerc (/ ss elem entit razan raza razav)
+  (setq ss (ssget "X" '((0 . "CIRCLE") (-4 . "<=") (40 . 3.0)) ) 
+  	elem (sslength ss))
+  (command "chprop" ss "" "C" 1 "")
+  (entmake '( (0 . "CIRCLE")
+	      (10 15.0 12.0 0)
+	      (40 . 20)
+	     )
+	   )
+  (princ elem)
+  (princ)
+
+  
+  (setq entit (entget (entlast)))
+  (setq razav(assoc 40 entit))
+  (initget 1)
+  
+  (setq razan (getint "\nPrecizati noua raza a cercului mare: "))
+  (setq entit (subst (cons 40 razan) razav entit))
+  (entmod entit)
+  )
