@@ -1,1 +1,0 @@
-Due to the large size of the frontend component, I was unable to upload it to GitHub. However, I am more than willing to present the frontend part through an interview or any other suitable format upon request.
